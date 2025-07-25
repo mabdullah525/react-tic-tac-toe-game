@@ -8,18 +8,18 @@ const Game = () => {
     <div className='container'>
       <div className='row'>
         <Square value={num[0]} />
-        <Square />
-        <Square />
+        <Square value={num[1]} />
+        <Square value={num[2]} />
       </div>
       <div className='row'>
-        <Square />
-        <Square />
-        <Square />
+        <Square value={num[3]} />
+        <Square value={num[4]} />
+        <Square value={num[5]} />
       </div>
       <div className='row'>
-        <Square />
-        <Square />
-        <Square />
+        <Square value={num[6]} />
+        <Square value={num[7]} />
+        <Square value={num[8]} />
       </div>
     </div>
   )
