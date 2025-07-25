@@ -2,7 +2,11 @@ import React from 'react'
 
 const Game = () => {
   return (
-    <div>Game</div>
+    <div className='container'>
+      <div className='row'></div>
+      <div className='row'></div>
+      <div className='row'></div>
+    </div>
   )
 }
 
