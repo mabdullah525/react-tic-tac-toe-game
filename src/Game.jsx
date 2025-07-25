@@ -5,7 +5,10 @@ const Game = () => {
   const [num, setNum] = useState([...Array(9).fill(null)])
   console.log(num)
   const handleClick = (index) => {
-    console.log('clicked', index)
+    let copyArray = [...num];
+    copyArray[index] = "X"
+    setNum(copyArray);
+    console.log(copyArray);
   }
   return (
     <div className='container'>
