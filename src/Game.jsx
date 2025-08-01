@@ -38,21 +38,29 @@ const Game = () => {
   }
   return (
     <div className='container'>
-      <div className='row'>
-        <Square onClick={() => handleClick(0)} value={num[0]} />
-        <Square onClick={() => handleClick(1)} value={num[1]} />
-        <Square onClick={() => handleClick(2)} value={num[2]} />
-      </div>
-      <div className='row'>
-        <Square onClick={() => handleClick(3)} value={num[3]} />
-        <Square onClick={() => handleClick(4)} value={num[4]} />
-        <Square onClick={() => handleClick(5)} value={num[5]} />
-      </div>
-      <div className='row'>
-        <Square onClick={() => handleClick(6)} value={num[6]} />
-        <Square onClick={() => handleClick(7)} value={num[7]} />
-        <Square onClick={() => handleClick(8)} value={num[8]} />
-      </div>
+      {
+        result ? <div className='win'><h1 className='result'>{result} : You Win</h1> <button>Play Again</button></div> : (
+          <>
+            <div className='row'>
+              <Square onClick={() => handleClick(0)} value={num[0]} />
+              <Square onClick={() => handleClick(1)} value={num[1]} />
+              <Square onClick={() => handleClick(2)} value={num[2]} />
+            </div>
+            <div className='row'>
+              <Square onClick={() => handleClick(3)} value={num[3]} />
+              <Square onClick={() => handleClick(4)} value={num[4]} />
+              <Square onClick={() => handleClick(5)} value={num[5]} />
+            </div>
+            <div className='row'>
+              <Square onClick={() => handleClick(6)} value={num[6]} />
+              <Square onClick={() => handleClick(7)} value={num[7]} />
+              <Square onClick={() => handleClick(8)} value={num[8]} />
+            </div>
+
+          </>
+        )
+      }
+
     </div>
   )
 }
