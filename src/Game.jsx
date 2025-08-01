@@ -17,8 +17,18 @@ const Game = () => {
       [0, 4, 8],
       [2, 4, 6]
     ]
+    for (let i = 0; i < winner.length; i++) {
+      let [a, b, c] = winner[i];
+      if (num[a] != null && num[a] === num[b] && num[a] === num[c]) {
+        return num[a];
 
+      }
+
+    }
+    return false;
   }
+  let result = checkWinner();
+
   const handleClick = (index) => {
     let copyArray = [...num];
     copyArray[index] = cond ? 'X' : 'O';
