@@ -36,10 +36,14 @@ const Game = () => {
     console.log(copyArray);
     setCond(!cond);
   }
+  const play = () => {
+    setNum([...Array(9).fill(null)]);
+    setCond(true);
+  }
   return (
     <div className='container'>
       {
-        result ? <div className='win'><h1 className='result'>{result} : You Win</h1> <button>Play Again</button></div> : (
+        result ? <div className='win'><h1 className='result'>{result} : You Win</h1> <button onClick={play}>Play Again</button></div> : (
           <>
             <div className='row'>
               <Square onClick={() => handleClick(0)} value={num[0]} />
