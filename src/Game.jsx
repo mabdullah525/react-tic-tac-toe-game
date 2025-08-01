@@ -30,6 +30,9 @@ const Game = () => {
   let result = checkWinner();
 
   const handleClick = (index) => {
+    if (num[index] || result) {
+      return;
+    }
     let copyArray = [...num];
     copyArray[index] = cond ? 'X' : 'O';
     setNum(copyArray);
@@ -42,6 +45,8 @@ const Game = () => {
   }
   return (
     <div className='container'>
+      <h1 className='heading'>Tic Tac Toe</h1>
+      <h2 className='turn'>{cond ? 'X' : 'O'} : Your Turn</h2>
       {
         result ? <div className='win'><h1 className='result'>{result} : You Win</h1> <button onClick={play}>Play Again</button></div> : (
           <>
