@@ -3,12 +3,28 @@ import Square from './Square.jsx'
 
 const Game = () => {
   const [num, setNum] = useState([...Array(9).fill(null)])
+  const [cond, setCond] = useState(true)
   console.log(num)
+
+  const checkWinner = () => {
+    let winner = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ]
+
+  }
   const handleClick = (index) => {
     let copyArray = [...num];
-    copyArray[index] = "X"
+    copyArray[index] = cond ? 'X' : 'O';
     setNum(copyArray);
     console.log(copyArray);
+    setCond(!cond);
   }
   return (
     <div className='container'>
